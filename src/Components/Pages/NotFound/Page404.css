@@ -1,0 +1,8 @@
+.notFoundbg{
+    background-image: url('../../Assets/images/404/404_bg.png');
+    background-position: center;
+    background-size: cover;
+}
+.icon-recize{
+    width: 30px;
+}

@@ -1,0 +1,10 @@
+.brandName{
+    color: #5469D4;
+    font-weight: 600;
+    font-family: 'Kaushan Script', cursive;
+}
+
+
+.stickyheader{
+    position: sticky;
+}
