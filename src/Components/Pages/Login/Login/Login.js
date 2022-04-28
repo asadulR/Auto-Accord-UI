@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import '../FormStyle.css';
-// import SocialLogin from '../SocialLogin/SocialLogin';
+import SocialLogin from '../SocialLogin/SocialLogin';
 const Login = () => {
     const navigate = useNavigate();
     let location = useLocation();
@@ -46,7 +46,7 @@ const Login = () => {
                     <span className='fs-6 mt-5 text-center'><small>Don't have an account? <Link to="/signup">Signup</Link></small></span>
                 </div>
                 <div className="footer-link mt-3 padding-top--24">
-                    {/* <SocialLogin /> */}
+                    <SocialLogin/>
                 </div>
             </div>
 

@@ -126,3 +126,8 @@ input[type="submit"] {
 .pointer:hover{
     cursor: pointer;
 }
+
+
+.social-icon{
+    width: 40px;
+}
