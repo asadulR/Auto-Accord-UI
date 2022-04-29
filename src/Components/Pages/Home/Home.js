@@ -1,6 +1,6 @@
 import React from 'react';
 import ChooseUs from './ChooseUs/ChooseUs';
-import Experts from './Experts/Experts';
+import Expert from './Experts/Expert';
 import HomeSlider from './HomeSlider/HomeSlider';
 import Welcome from './Welcome/Welcome';
 
@@ -8,7 +8,7 @@ const Home = () => {
     return (
         <main>
             <HomeSlider/>
-            <Experts/>
+            <Expert/>
             <ChooseUs/>
             <Welcome/>
         </main>
