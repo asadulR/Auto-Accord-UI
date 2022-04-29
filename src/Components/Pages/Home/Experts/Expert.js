@@ -61,7 +61,7 @@ const Expert = () => {
                 swipeable
             >
                 <div className='img-container'>
-                    <img src='https://i.ibb.co/nLfkrgw/team-img01.jpg' alt="" />
+                    <img className='img-fluid' src='https://i.ibb.co/nLfkrgw/team-img01.jpg' alt="" />
                     <h4 className='text-center gray mt-3 fw-bold'>Doue Sara</h4>
                     <p className='text-center mt-2 gray'>Content Manager</p>
                     <div className="overlay">
@@ -71,7 +71,7 @@ const Expert = () => {
                     </div>
                 </div>
                 <div className='img-container'>
-                    <img src='https://i.ibb.co/G9QczWP/team-img02.jpg' alt="" />
+                    <img className='img-fluid' src='https://i.ibb.co/G9QczWP/team-img02.jpg' alt="" />
                     <h4 className='text-center gray mt-3 fw-bold'>Limha Granda</h4>
                     <p className='text-center mt-2 gray'>Exicutive Officer</p>
                     <div className='overlay'>
@@ -81,7 +81,7 @@ const Expert = () => {
                     </div>
                 </div>
                 <div className='img-container'>
-                    <img src='https://i.ibb.co/JpMGnKK/team-img03.jpg' alt="" />
+                    <img className='img-fluid' src='https://i.ibb.co/JpMGnKK/team-img03.jpg' alt="" />
                     <h4 className='text-center gray mt-3 fw-bold'>Sara Powel</h4>
                     <p className='text-center mt-2 gray'>Ass. Manager</p>
                     <div className='overlay'>
@@ -92,7 +92,7 @@ const Expert = () => {
                     </div>
                 </div>
                 <div className='img-container'>
-                    <img src='https://i.ibb.co/VLphfM7/team-img04.jpg' alt="" />
+                    <img className='img-fluid' src='https://i.ibb.co/VLphfM7/team-img04.jpg' alt="" />
                     <h4 className='text-center gray mt-3 fw-bold'>Adam Smith</h4>
                     <p className='text-center mt-2 gray'>Car Dealer</p>
                     <div className='overlay'>
@@ -102,7 +102,7 @@ const Expert = () => {
                     </div>
                 </div>
                 <div className='img-container'>
-                    <img src='https://i.ibb.co/kQcNQ5Q/team-img05.jpg' alt="" />
+                    <img className='img-fluid' src='https://i.ibb.co/kQcNQ5Q/team-img05.jpg' alt="" />
                     <h4 className='text-center gray mt-3 fw-bold'>Jemmy Lee</h4>
                     <p className='text-center mt-2 gray'>Car Dealer</p>
                     <div className='overlay'>
@@ -112,7 +112,7 @@ const Expert = () => {
                     </div>
                 </div>
                 <div className='img-container'>
-                    <img src="https://i.ibb.co/s1LgMzP/team-img06.jpg" alt="" />
+                    <img className='img-fluid' src="https://i.ibb.co/s1LgMzP/team-img06.jpg" alt="" />
                     <h4 className='text-center gray mt-3 fw-bold'>Luccy R.</h4>
                     <p className='text-center mt-2 gray'>BMW Dealer</p>
                     <div className='overlay'>
@@ -122,7 +122,7 @@ const Expert = () => {
                     </div>
                 </div>
                 <div className='img-container'>
-                    <img src="https://i.ibb.co/gShzSHd/team-img07.jpg" alt="" />
+                    <img className='img-fluid' src="https://i.ibb.co/gShzSHd/team-img07.jpg" alt="" />
                     <h4 className='text-center gray mt-3 fw-bold'>Krish Jhonson</h4>
                     <p className='text-center mt-2 gray'>Manager</p>
                     <div className='overlay'>
@@ -132,7 +132,7 @@ const Expert = () => {
                     </div>
                 </div>
                 <div className='img-container'>
-                    <img src="https://i.ibb.co/8XgVCQ0/team-img08.jpg" alt="" />
+                    <img className='img-fluid' src="https://i.ibb.co/8XgVCQ0/team-img08.jpg" alt="" />
                     <h4 className='text-center gray mt-3 fw-bold'>Samantha Paul</h4>
                     <p className='text-center mt-2 gray'>Auto Dealer</p>
                     <div className='overlay'>
