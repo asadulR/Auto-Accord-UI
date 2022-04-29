@@ -12,7 +12,7 @@ const Loading = () => {
                     role="status"
                     aria-hidden="true"
                 />
-                Loading...
+                Please wait, Loading...
             </Button>
         </div>
     );
