@@ -29,21 +29,23 @@ const Login = () => {
 
 
 
-    if (error || resetError) {
-        if(error?.message.includes('auth/email-already-in-use')){
-            errorElement = <p className='text-danger'>Email already in use.</p>
-        }
-        if(error?.message.includes('auth/weak-password')){
-            errorElement = <p className='text-danger'>error: Password should be at least 6 characters.</p>
-        }
-        else{
-            errorElement = <p className='text-danger'>Error: {error?.message}</p>
-        }
-    }
+    
 
     const handleLogin = event => {
         event.preventDefault();
         signInWithEmailAndPassword(email, password);
+    };
+
+    if (error) {
+        if(error?.message.includes('auth/user-not-found')){
+            errorElement = <p className='text-danger'>error: user not found</p>
+        }
+        if(error?.message.includes('auth/wrong-password')){
+            errorElement = <p className='text-danger'>error: wrong password</p>
+        }
+        else{
+            // errorElement = <p className='text-danger'>Error: {error?.message}</p>
+        }
     }
     
     useEffect(() => {
@@ -52,11 +54,14 @@ const Login = () => {
         }
     }, [user]);
 
+
+
     if (loading || sending) {
         return <Loading />
     }
 
     const resetPassword = async () => {
+        errorElement = ''
         if (email) {
             await sendPasswordResetEmail(email);
             toast.success('Sent email');
