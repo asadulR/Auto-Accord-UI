@@ -1,3 +1,4 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -7,6 +8,12 @@ import CustomLink from '../Shared/CustomLink/CustomLink';
 import './Header.css'
 const Header = () => {
     const [user] = useAuthState(auth);
+
+
+
+    const logout = () => {
+        signOut(auth);
+      };
     return (
         <section className='sticky-top shadow-sm'>
             <Navbar sticky='top' className='py-3' collapseOnSelect expand="lg" bg="light" variant="light">
@@ -22,7 +29,7 @@ const Header = () => {
                             <Nav.Link href="#deets">More deets</Nav.Link>
                             {
                             user? 
-                            <button className='btn text-start ps-0'>Logout</button>
+                            <button onClick={logout} className='btn text-start ps-0'>Logout</button>
                             : <Nav.Link as={CustomLink} to="/login">
                                 LOGIN
                             </Nav.Link> }
