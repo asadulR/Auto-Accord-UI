@@ -1,0 +1,30 @@
+.gray{
+    color: gray;
+}
+
+.icon-style{
+    font-size: 3rem;
+    transition: 1s;
+}
+.icon-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px; 
+    height: 90px;
+    width: 90px;
+    margin: 20px auto;
+    background-color: #F6F6F6;
+    border-radius: 50%;
+}
+.icon-container:hover .icon-style{
+    transform: rotate(360deg);
+}
+
+.line-bittom{
+    margin: auto;
+    width: 40px;
+    height: 2px;
+    background-color: #DB2D2E;
+}
