@@ -25,3 +25,20 @@
 .welcome-row:hover .red-line-bottom{
     width: 40px;
 }
+
+.reviews h2{
+    color: #db2d2e;
+    font-weight: 700;
+}
+
+.icon-style-w{
+    font-size: 2rem;
+}
+
+.welcome-img{
+    transition: 1s;
+}
+
+.welcome-img:hover{
+    transform: scale(.97);
+}
