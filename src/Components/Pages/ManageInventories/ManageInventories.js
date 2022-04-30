@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Loading from '../Shared/Loading/Loading';
 import SingelInventory from './SingelInventory';
 import './ManageInventories.css';
+import { Link } from 'react-router-dom';
 const ManageInventories = () => {
     const [inventoryItems, setInventoryItems] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -19,7 +20,7 @@ const ManageInventories = () => {
     return (
         <div className='all-inventories-container'>
             <div className="container">
-                <h2 className='text-center fs-1 fW-bold'>All Inventories Items</h2>
+                <h2 className='text-center text-primary fs-1 fW-bold'>All Inventories Items</h2>
                 <div className="line-top"></div>
                 <div className="line-bottom"></div>
 
@@ -29,7 +30,7 @@ const ManageInventories = () => {
                 {
                     loading ? (<Loading></Loading>) :
 
-                        (<div className='row row-cols-1 row-cols-md-3 row-cols-lg-4 g-2'>
+                        (<div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3'>
                             {
                                 inventoryItems.map(InventoryItem => <SingelInventory
                                     key={InventoryItem._id}
@@ -38,6 +39,10 @@ const ManageInventories = () => {
                             }
                         </div>)
                 }
+            </div>
+
+            <div className='add-inventory-btn-container'>
+                <Link className='add-inventory-btn' to='/'>Add New Inventory</Link>
             </div>
         </div>
     );

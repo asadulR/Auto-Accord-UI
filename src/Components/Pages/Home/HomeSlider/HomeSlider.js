@@ -14,18 +14,6 @@ const HomeSlider = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src={slider1}
-                        alt="First slide"
-                    />
-                    <Carousel.Caption className='slide-caption' data-aos="fade-up"
-                        data-aos-duration="3000">
-                        <h2 className='text-primary'>YOUR VEHICLE IS SAFE WITH US</h2>
-                        <p className='text-primary w-50 mx-auto'>Number one car dealer in the city. We provide the best solution for your car needs.</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-                <Carousel.Item>
-                    <img
-                        className="d-block w-100"
                         src={slider2}
                         alt="Second slide"
                     />
@@ -34,6 +22,19 @@ const HomeSlider = () => {
                         data-aos-duration="3000">
                         <h2>IMPROVE YOUR BOSINESS WITH US</h2>
                         <p className='w-50 mx-auto'>Number one car dealer in the city. We provide the best solution for your car needs.</p>
+                    </Carousel.Caption>
+                </Carousel.Item>
+
+                <Carousel.Item>
+                    <img
+                        className="d-block w-100"
+                        src={slider1}
+                        alt="First slide"
+                    />
+                    <Carousel.Caption className='slide-caption' data-aos="fade-up"
+                        data-aos-duration="3000">
+                        <h2 className='text-primary'>YOUR VEHICLE IS SAFE WITH US</h2>
+                        <p className='text-primary w-50 mx-auto'>Number one car dealer in the city. We provide the best solution for your car needs.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>

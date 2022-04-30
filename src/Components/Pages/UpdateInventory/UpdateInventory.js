@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import toast, { Toaster } from 'react-hot-toast';
 AOS.init();
 
 const UpdateInventory = () => {
@@ -83,7 +84,7 @@ const UpdateInventory = () => {
             .then(res => res.json())
             .then(data => {
                 console.log('Success: ', data)
-
+                toast.success('Inventory Restocked!');
                 // alert('Qusntity updated successfully')
 
             })
@@ -104,8 +105,7 @@ const UpdateInventory = () => {
                 {
                     loading ? (<Loading></Loading>) :
 
-                        (<div data-aos="fade-up"
-                        data-aos-duration="2000">
+                        (<div>
                             <div className='row row-cols-1 row-cols-lg-2 g-4'>
                                 <div className='col text-center'><img className='img-fluid rounded' src={img} alt="" /></div>
                                 <div className='col'>
@@ -126,7 +126,7 @@ const UpdateInventory = () => {
                                     <input className='restock-btn btn' type="submit" value="Restock" />
                                 </form>
                             </div>
-
+                            <Toaster/>
                             <button onClick={manageInventoryBtn} className='manage-inventories d-flex justify-content-center align-items-center'>Manage Inventories</button>
                         </div>)
                 }

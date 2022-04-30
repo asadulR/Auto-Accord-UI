@@ -32,18 +32,23 @@
 
 
 .single-item-container{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
     transition: 0.8s;
+    min-height: 500px;
     
 }
 .img-overlay-container{
     position: relative;
+
     overflow: hidden;
 }
 .inv-item-img{
     transition: 1s;
 }
 .single-item-container:hover {
-    box-shadow: 2px 2px 20px 2px lightslategray;
+    box-shadow: 0px 1px 5px 1px lightslategray;
     border-radius: 8px;
 
 }
@@ -69,7 +74,7 @@
     opacity: 1;
 }
 
-
+/* 
 
 .stock-update{
     transition: .8s ease;
@@ -85,4 +90,60 @@
 .stock-update:hover {
     background-color: #DB2D2E;
     color: #F1F1F1;
+} */
+.stockupdate-btn{
+    padding: 6px 10px;
+    transition: .8s ease;
+    border: 1px solid #DB2D2E;
+    font-weight: 700;
+    color: #DB2D2E;
+    border-radius: 5px;
+}
+
+.stockupdate-btn:hover{
+    color: #f1f1f1;
+    background-color: #DB2D2E;
+}
+
+.delete-btn{
+    padding: 6px 10px;
+    transition: .8s ease;
+    border: 0;
+    background-color: #DB2D2E;
+    color: #f1f1f1;
+    font-weight: 700;
+    border-radius: 5px;
+}
+.delete-btn:hover{
+    transform: scale(.90);
+}
+.btns-container{
+    position: absolute;
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    bottom: 3%;
+}
+
+.add-inventory-btn-container{
+    margin: 50px auto 0 auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.add-inventory-btn{
+    text-decoration: none;
+    font-weight: 700;
+    color: #DB2D2E;
+    border: 2px solid #DB2D2E;
+    padding: 8px 30px;
+    transition: .7s ease-in-out;
+    border-radius: 5px;
+}
+
+.add-inventory-btn:hover{
+    color: #f1f1f1;
+    background-color: #DB2D2E;
 }
