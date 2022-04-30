@@ -2,10 +2,15 @@ import React, { useEffect, useState } from 'react';
 import Loading from '../../Shared/Loading/Loading';
 import './InventoryItems.css'
 import Item from './Item';
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useNavigate } from 'react-router-dom';
+AOS.init();
 const InventoryItems = () => {
     const [inventoryItems, setInventoryItems] = useState([]);
     const [loading, setLoading] = useState(false);
-
+    const navigate = useNavigate();
     useEffect( () => {
         setLoading(true)
 
@@ -17,6 +22,11 @@ const InventoryItems = () => {
             setLoading(false)
         });
     },[]);
+
+
+    const manageInventoryBtn = () =>{
+        navigate('/manageinventories');
+    };
 
     return (
         <section className='in-stock-section'>
@@ -41,7 +51,7 @@ const InventoryItems = () => {
 
 
 
-                <button className='manage-inventories d-flex justify-content-center align-items-center'>Manage Inventories</button>
+                <button onClick={manageInventoryBtn} className='manage-inventories d-flex justify-content-center align-items-center'>Manage Inventories</button>
             </div>
         </section>
     );

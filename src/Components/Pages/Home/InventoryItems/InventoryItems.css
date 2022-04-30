@@ -94,10 +94,10 @@
 
 .manage-inventories{
     transition: .8s ease;
-    width: 50%;
+    max-width: 500px;
     margin: 70px auto 0 auto;
     border: 2px solid #DB2D2E;
-    padding: 10px;
+    padding: 10px 50px;
     font-size: 20px;
     font-weight: 600;
     background-color: #DB2D2E;

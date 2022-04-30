@@ -2,8 +2,10 @@ import React from 'react';
 import tesla from '../../../Assets/Images/tesla.jpg';
 import './Welcome.css'
 import { FaCarCrash } from "react-icons/fa";
-import { BsSuitHeartFill, BsFillEmojiHeartEyesFill, BsAwardFill} from "react-icons/bs";
-
+import { BsSuitHeartFill, BsFillEmojiHeartEyesFill, BsAwardFill } from "react-icons/bs";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 const Welcome = () => {
     return (
         <div className='my-5 welcome-container'>
@@ -12,10 +14,12 @@ const Welcome = () => {
                 <div className='red-line-top '></div>
                 <div className='red-line-bottom'></div>
                 <div className="row mt-3 pt-5 g-4 welcome-row align-items-center">
-                    <div className="col-12 col-md-6">
+                    <div className="col-12 col-md-6" data-aos="fade-up"
+                        data-aos-duration="2000">
                         <img className='img-fluid rounded welcome-img' src={tesla} alt="" />
                     </div>
-                    <div className="col-12 px-5 col-md-6">
+                    <div className="col-12 px-5 col-md-6" data-aos="fade-up"
+                        data-aos-duration="2000">
                         <h5 className='gray'>Deal with the best car dealer in the town.</h5>
                         <p className='mb-5'>Search Our Inventory With Thousands Of Cars And More Cars Are Adding On Daily Basis</p>
                         <div className="row g-3 reviews">
@@ -33,7 +37,7 @@ const Welcome = () => {
                             <div className="col-6">
                                 <div className="d-flex">
                                     <div>
-                                        <BsSuitHeartFill className='icon-style-w text-danger me-2'/>
+                                        <BsSuitHeartFill className='icon-style-w text-danger me-2' />
                                     </div>
                                     <div>
                                         <p className='mb-0'><small className='fw-bold gray'>DEALER REVIEWS</small></p>
@@ -44,7 +48,7 @@ const Welcome = () => {
                             <div className="col-6">
                                 <div className="d-flex">
                                     <div>
-                                        <BsFillEmojiHeartEyesFill className='icon-style-w me-2 text-primary'/>
+                                        <BsFillEmojiHeartEyesFill className='icon-style-w me-2 text-primary' />
                                     </div>
                                     <div>
                                         <p className='mb-0'><small className='fw-bold gray'>HAPPY CUSTOMERS</small></p>
@@ -55,7 +59,7 @@ const Welcome = () => {
                             <div className="col-6">
                                 <div className="d-flex">
                                     <div>
-                                        <BsAwardFill className="me-2 icon-style-w text-success"/>
+                                        <BsAwardFill className="me-2 icon-style-w text-success" />
                                     </div>
                                     <div>
                                         <p className='mb-0'><small className='fw-bold gray'>AWARDS</small></p>

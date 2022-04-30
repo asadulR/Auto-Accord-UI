@@ -1,10 +1,15 @@
 import React from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
-const SingelInventory = ({InventoryItem}) => {
+
+const SingelInventory = ({ InventoryItem }) => {
     const { description, img, name, quantity, price, supplier } = InventoryItem;
-    
+
     return (
-        <div className='col single-item-container'>
+        <div data-aos="fade-up"
+            data-aos-duration="2000" className='col single-item-container'>
             <div className="img-overlay-container">
                 <img className=' w-100 rounded inv-item-img' src={img} alt="" />
                 <h4 className="img-over">Price: ${price}</h4>
