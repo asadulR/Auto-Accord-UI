@@ -42,7 +42,7 @@ const ManageInventories = () => {
             </div>
 
             <div className='add-inventory-btn-container'>
-                <Link className='add-inventory-btn' to='/'>Add New Inventory</Link>
+                <Link className='add-inventory-btn' to='/additem'>Add New Inventory</Link>
             </div>
         </div>
     );

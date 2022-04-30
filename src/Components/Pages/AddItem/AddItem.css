@@ -1,0 +1,22 @@
+.add-item-container{
+    background-image: url('../../Assets/Images/wickedbackground.png');
+    background-size: cover;
+    background-position: center;
+    padding: 60px 0;
+}
+.item-form-container{
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.add-item-btn{
+    padding: 8px 50px;
+    transition: .5s;
+    font-size: 1.2rem;
+}
+.add-item-btn:hover{
+    background-color: #DB2D2E;
+    color: aliceblue;
+    transform: scale(.90);
+    box-shadow: 1px 1px 20px skyblue;
+}

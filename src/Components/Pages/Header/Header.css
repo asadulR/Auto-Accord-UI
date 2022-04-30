@@ -9,3 +9,7 @@
 .stickyheader{
     position: sticky;
 }
+
+.gray{
+    color: gray;
+}
