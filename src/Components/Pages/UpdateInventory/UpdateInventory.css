@@ -48,3 +48,22 @@
     background-color: crimson;
     color:aliceblue;
 }
+
+
+
+.manage-inventories{
+    transition: .8s ease;
+    max-width: 500px;
+    margin: 70px auto 0 auto;
+    border: 2px solid #DB2D2E;
+    padding: 10px 50px;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #DB2D2E;
+    color: #F1F1F1;
+    border-radius: 7px;
+}
+.manage-inventories:hover {
+    color: #DB2D2E;
+    background-color: #F1F1F1;
+}

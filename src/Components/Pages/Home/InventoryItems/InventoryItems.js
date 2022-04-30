@@ -3,9 +3,9 @@ import Loading from '../../Shared/Loading/Loading';
 import './InventoryItems.css'
 import Item from './Item';
 
+import { useNavigate } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useNavigate } from 'react-router-dom';
 AOS.init();
 const InventoryItems = () => {
     const [inventoryItems, setInventoryItems] = useState([]);
