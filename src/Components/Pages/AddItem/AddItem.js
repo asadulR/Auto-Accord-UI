@@ -23,9 +23,10 @@ const AddItem = () => {
 
         const item = {img, name, supplier, price, quantity, description, email};
 
-        const url = `http://localhost:4000/items/`;
+        //  adding my item to all items collection
+        const inventoryUrl = `http://localhost:4000/items/`;
 
-        fetch (url, {
+        fetch (inventoryUrl, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -38,6 +39,22 @@ const AddItem = () => {
             console.log(result);
         })
 
+
+        // Adding my item to myitem database collection
+        const myInventoryUrl = `http://localhost:4000/myitems/`;
+
+        fetch (myInventoryUrl, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(item)
+        })
+        .then(res => res.json())
+        .then(result => {
+            // toast.success("Inventory Item Added");
+            console.log(result);
+        })
 
 
         event.target.reset();

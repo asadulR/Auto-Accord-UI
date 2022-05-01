@@ -1,0 +1,30 @@
+.my-items-container{
+    padding: 60px 0;
+    background: url(../../Assets/Images/wickedbackground.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* .b-gray{
+    color: rgb(99, 14, 39);
+} */
+
+.item-delete-btn{
+    border: 2px solid crimson;
+    padding: 5px 40px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: crimson;
+    transition: .5s;
+    border-radius: 5px;
+}
+
+.text-w{
+    color: aliceblue;
+}
+
+.item-delete-btn:hover{
+    background-color: crimson;
+    color: aliceblue;
+    transform: scale(.96);
+}
