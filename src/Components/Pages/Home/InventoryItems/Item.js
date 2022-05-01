@@ -13,7 +13,7 @@ const Item = ({ item }) => {
         navigate(`/inventory/${_id}`);
     }
     return (
-        <div className='col item-container py-3' data-aos="fade-up"
+        <div className='col item-container py-2' data-aos="fade-up"
             data-aos-duration="2000">
             <div className="overlay-container">
                 <img className=' w-100 rounded item-img' src={img} alt="" />
