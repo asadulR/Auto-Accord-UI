@@ -19,7 +19,6 @@ const MyItems = () => {
     // console.log(email);
     useEffect(() => {
         const url = `http://localhost:4000/myitems?email=${email}`;
-        // console.log(url);
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -28,7 +27,7 @@ const MyItems = () => {
                     : <Loading />
             });
 
-    }, [user])
+    }, [myItems, user])
     return (
         <div className='my-items-container'>
             <div className="container">

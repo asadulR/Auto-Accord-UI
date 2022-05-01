@@ -10,6 +10,7 @@ import toast, { Toaster } from 'react-hot-toast';
 AOS.init();
 const AddItem = () => {
     const [user] = useAuthState(auth);
+    // console.log(user)
 
     const handleAddItem = event => {
         event.preventDefault();
@@ -18,10 +19,11 @@ const AddItem = () => {
         const supplier = event.target.supplier.value;
         const price = event.target.price.value;
         const quantity = event.target.quantity.value;
+        const code = event.target.code.value;
         const description = event.target.description.value;
         const email = user?.email;
 
-        const item = {img, name, supplier, price, quantity, description, email};
+        const item = {img, name, supplier, price, quantity, code, description, email};
 
         //  adding my item to all items collection
         const inventoryUrl = `http://localhost:4000/items/`;
@@ -53,7 +55,7 @@ const AddItem = () => {
         .then(res => res.json())
         .then(result => {
             // toast.success("Inventory Item Added");
-            console.log(result);
+            // console.log(result);
         })
 
 
@@ -73,8 +75,11 @@ const AddItem = () => {
                     <div className="col-md-6">
                         <input type="text" required name='supplier' placeholder='Your name *' className="form-control" id="inputname " />
                     </div>
-                    <div className="col-12">
+                    <div className="col-6">
                         <input type="text" name='name' className="form-control" required id="inputItemName" placeholder="Inventory item name *" />
+                    </div>
+                    <div className="col-6">
+                        <input type="text" name='code' className="form-control" required id="inputItemCode" placeholder="Insert a unique code *"/>
                     </div>
                     <div className="col-md-3">
                         <input type="number" required name='price' placeholder='Price *' className="form-control" id="inputPrice " />

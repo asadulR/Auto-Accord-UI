@@ -2,10 +2,49 @@ import React from 'react';
 import './ManageInventories.css';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import useInventoryItems from '../../../hooks/useInventoryItems';
+import toast, { Toaster } from 'react-hot-toast';
 AOS.init();
 
 const SingelInventory = ({ InventoryItem }) => {
-    const { description, img, name, quantity, price, supplier } = InventoryItem;
+    const { description, img, name, quantity, price, supplier, _id, code } = InventoryItem;
+    const [items, setInventoryItems] = useInventoryItems();
+
+    const handleDelete = (code) => {
+        //  deleting inventory from allitems collection
+        const proceed = window.confirm('Are you sure deleting the item?')
+
+        if (proceed) {
+            const itemDeleteUrl = `http://localhost:4000/items/${code}`;
+
+            fetch(itemDeleteUrl, {
+                method: 'DELETE',
+
+            })
+                .then(res => res.json())
+                .then(data => {
+                    const remainingInventoryItems = items.filter(item => item.code !== code);
+
+                    setInventoryItems(remainingInventoryItems);
+                    toast.success('Inventory Deleted');
+                });
+
+
+            //  deleting inventory from myAddedItems collection
+            const myItemDeleteUrl = `http://localhost:4000/myitems/${code}`;
+
+            fetch(myItemDeleteUrl, {
+                method: 'DELETE',
+
+            })
+                .then(res => res.json())
+                .then(data => {
+                    // console.log(data);
+
+                })
+        }
+
+    }
 
     return (
         <div data-aos="fade-up"
@@ -20,8 +59,9 @@ const SingelInventory = ({ InventoryItem }) => {
 
             <div className='btns-container'>
                 <button className='stockupdate-btn ms-3'>Stock Update</button>
-                <button className='delete-btn'>Delete Stock</button>
+                <button onClick={() => handleDelete(code)} className='delete-btn'>Delete Stock</button>
             </div>
+            <Toaster/>
         </div>
     );
 };

@@ -3,20 +3,14 @@ import Loading from '../Shared/Loading/Loading';
 import SingelInventory from './SingelInventory';
 import './ManageInventories.css';
 import { Link } from 'react-router-dom';
+import useInventoryItems from '../../../hooks/useInventoryItems';
+
+
 const ManageInventories = () => {
-    const [inventoryItems, setInventoryItems] = useState([]);
-    const [loading, setLoading] = useState(false);
-
-    useEffect(() => {
-        setLoading(true)
-
-        fetch('http://localhost:4000/items')
-            .then(res => res.json())
-            .then(data => {
-                setInventoryItems(data)
-                setLoading(false)
-            });
-    }, []);
+    // const [inventoryItems, setInventoryItems] = useState([]);
+    // const [loading, setLoading] = useState(false);
+    const [items, setInventoryItems, loading] = useInventoryItems();
+    
     return (
         <div className='all-inventories-container'>
             <div className="container">
@@ -28,16 +22,16 @@ const ManageInventories = () => {
 
 
                 {
-                    loading ? (<Loading></Loading>) :
+                    items ? 
 
                         (<div className='row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3'>
                             {
-                                inventoryItems.map(InventoryItem => <SingelInventory
+                                items.map(InventoryItem => <SingelInventory
                                     key={InventoryItem._id}
                                     InventoryItem={InventoryItem}
                                 ></SingelInventory>)
                             }
-                        </div>)
+                        </div>) : (<Loading></Loading>)
                 }
             </div>
 

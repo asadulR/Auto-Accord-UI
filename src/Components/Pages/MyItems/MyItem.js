@@ -4,10 +4,45 @@ import './MyItems.css'
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import toast, { Toaster } from 'react-hot-toast';
 AOS.init();
 const MyItem = ({ item }) => {
-    const { img, name, price, description, quantity, supplier } = item;
+    const { img, name, price, description, quantity, supplier, _id, code } = item;
 
+
+    const handleDelete = code => {
+        const proceed = window.confirm('Are you sure deleting the item?')
+
+        if(proceed) {     
+            
+            //  deleting inventory from myAddedItems collection
+            const myItemDeleteUrl = `http://localhost:4000/myitems/${code}`;
+            
+            fetch(myItemDeleteUrl, {
+                method: 'DELETE',
+                
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                toast.success('Stocked Item Deleted')
+            });
+
+            //  deleting inventory from allitems collection
+            const itemDeleteUrl = `http://localhost:4000/items/${code}`;
+
+            fetch(itemDeleteUrl, {
+                method: 'DELETE',
+
+            })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                
+            })
+
+        }
+    }
     return (
         <div className="col" data-aos="fade-up"
         data-aos-duration="3000">
@@ -21,9 +56,11 @@ const MyItem = ({ item }) => {
                     
                     <p className='text-w'>{description}</p>
 
-                    <div className="text-end"><button className=' me-4 item-delete-btn'>Delete Item</button></div>
+                    <div className="text-end"><button onClick={() => handleDelete(code)} className=' me-4 item-delete-btn'>Delete Item</button></div>
                 </div>
             </div>
+
+            <Toaster/>
         </div>
     );
 };
