@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from 'react';
-import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import toast, { Toaster } from 'react-hot-toast';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../Shared/Auth/Firebase.init';
@@ -28,30 +28,53 @@ const Login = () => {
 
 
 
-    
+
 
     const handleLogin = event => {
         event.preventDefault();
         signInWithEmailAndPassword(email, password);
     };
 
+    const [logedinUser] = useAuthState(auth);
+
     if (error) {
-        if(error?.message.includes('auth/user-not-found')){
+        if (error?.message.includes('auth/user-not-found')) {
             errorElement = <p className='text-danger'>error: user not found</p>
         }
-        if(error?.message.includes('auth/wrong-password')){
+        if (error?.message.includes('auth/wrong-password')) {
             errorElement = <p className='text-danger'>error: wrong password</p>
         }
-        else{
+        else {
             // errorElement = <p className='text-danger'>Error: {error?.message}</p>
         }
     }
+
     
-    useEffect(() => {
-        if (user) {
-            navigate(from, { replace: true });
-        }
-    }, [user]);
+   useEffect( () => {
+    if (user) {
+        //  generating a tocken for the backend 
+        const url = 'http://localhost:4000/login';
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify({
+               email: logedinUser?.email
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                localStorage.setItem('accessToken', data.token);
+
+
+                navigate(from, { replace: true });
+            });
+
+
+        // console.log(logedinUser?.email)
+    }
+   },[logedinUser])
 
 
 
@@ -91,7 +114,7 @@ const Login = () => {
                                         <p onClick={resetPassword} className='pointer'>Forgot your password?</p>
                                     </div>
                                 </div>
-                                <input  onChange={(e) => setPassword(e.target.value)} type="password" name="password" id='password' required />
+                                <input onChange={(e) => setPassword(e.target.value)} type="password" name="password" id='password' required />
                             </div>
                             {errorElement}
                             <div className="field padding-bottom--24">
@@ -102,8 +125,8 @@ const Login = () => {
                     <span className='fs-6 mt-5 text-center'><small>Don't have an account? <Link to="/signup">Signup</Link></small></span>
                 </div>
                 <div className="footer-link mt-3 padding-top--24">
-                    <SocialLogin/>
-                    <Toaster/>
+                    <SocialLogin />
+                    <Toaster />
                 </div>
             </div>
 

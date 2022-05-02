@@ -5,7 +5,7 @@ import 'aos/dist/aos.css';
 import { useNavigate } from 'react-router-dom';
 AOS.init();
 const Item = ({ item }) => {
-    const { description, img, name, quantity, price, supplier, _id } = item;
+    const { description, img, name, quantity, price, supplier, _id, sold } = item;
     // console.log(img);
     const navigate = useNavigate();
 

@@ -30,7 +30,7 @@ const UpdateInventory = () => {
             })
     }, [setQuantity]);
 
-    const { name, price, supplier, img, description } = inventory;
+    const { name, price, supplier, img, description, sold } = inventory;
 
     //  Delivered inventory
     const quantityReduce = () => {
@@ -112,10 +112,14 @@ const UpdateInventory = () => {
                                     <h2 className='text-center gray fw-bold'>{name}</h2>
                                     <h5 className='fw-bold gray mt-5 d-flex'>Price : <span className='ms-2 s-color'>${price}</span></h5>
                                     <h5 className='fw-bold gray mt-3 d-flex'>Quantity : <span className='ms-2 s-color'>{quantity}</span></h5>
+                                    <h5 className='fw-bold mt-3 gray d-flex'>Sold : <span className='ms-2 s-color'>{sold}</span></h5>
                                     <h5 className='fw-bold mt-3 gray d-flex'>Supplier : <span className='ms-2 s-color'>{supplier}</span></h5>
 
                                     <p className='gray mt-3'>{description}</p>
-                                    <button className='delivered-btn' onClick={quantityReduce}>Delivered</button>
+                                    {
+                                        quantity? (<button className='delivered-btn' onClick={quantityReduce}>Delivered</button>)
+                                         :
+                                    (<button className='delivered-btn bg-danger text-white'>Sold out</button>)}
                                 </div>
                             </div>
 

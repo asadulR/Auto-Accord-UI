@@ -31,6 +31,7 @@ const AddItem = () => {
         fetch (inventoryUrl, {
             method: 'POST',
             headers: {
+                'authoraization': `${user.email} ${localStorage.getItem("accessToken")}`,
                 'content-type': 'application/json'
             },
             body: JSON.stringify(item)
@@ -48,6 +49,7 @@ const AddItem = () => {
         fetch (myInventoryUrl, {
             method: 'POST',
             headers: {
+                'authoraization': `${user.email} ${localStorage.getItem("accessToken")}`,
                 'content-type': 'application/json'
             },
             body: JSON.stringify(item)

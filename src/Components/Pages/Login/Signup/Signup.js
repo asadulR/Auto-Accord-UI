@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Helmet } from 'react-helmet-async';
 import toast, { Toaster } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
@@ -21,29 +21,43 @@ const Signup = () => {
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
-    console.log(email, password, name);
+    // console.log(email, password, name);
+    const [logedInUser] = useAuthState(auth);
     const handleSingup = (event) => {
         event.preventDefault();
         createUserWithEmailAndPassword(email, password);
     };
 
     if (error) {
-        if(error?.message.includes('auth/email-already-in-use')){
+        if (error?.message.includes('auth/email-already-in-use')) {
             errorElement = <p className='text-danger'>Email already in use.</p>
         }
-        if(error?.message.includes('auth/weak-password')){
+        if (error?.message.includes('auth/weak-password')) {
             errorElement = <p className='text-danger'>error: Password should be at least 6 characters.</p>
         }
-        else{
+        else {
             errorElement = <p className='text-danger'>Error: {error?.message}</p>
         }
     }
 
-    if (user) {
-        toast.success('Account Created!');
-    }
     useEffect(() => {
         if (user) {
+            const url = 'http://localhost:4000/login';
+            fetch(url, {
+                method: 'POST',
+                body: JSON.stringify({
+                    email: logedInUser?.email
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    localStorage.setItem('accessToken', data.token);
+                    console.log(logedInUser.email)
+                });
+
             toast.success('Account Created!');
             navigate('/');
         }

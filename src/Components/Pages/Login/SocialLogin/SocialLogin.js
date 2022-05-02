@@ -19,16 +19,34 @@ const SocialLogin = () => {
 
 
     const googleAuth = () => {
-        signInWithPopup(auth , provider)
-        .then((result) => {
-            const user = result.user;
-            navigate(from, { replace: true });
-            // console.log(user)
-        }).catch((error) => {
-            const errorMessage = error.message;
-            setError(errorMessage);
-            // console.log(error.message)
-        });
+        signInWithPopup(auth, provider)
+            .then((result) => {
+                const user = result.user;
+
+                //  generating a tocken for the backend 
+                const url = 'http://localhost:4000/login';
+                fetch(url, {
+                    method: 'POST',
+                    body: JSON.stringify({
+                        email: user?.email
+                    }),
+                    headers: {
+                        'Content-type': 'application/json; charset=UTF-8',
+                    },
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        localStorage.setItem('accessToken', data.token);
+
+                    });
+
+                navigate(from, { replace: true });
+                // console.log(user)
+            }).catch((error) => {
+                const errorMessage = error.message;
+                setError(errorMessage);
+                // console.log(error.message)
+            });
     }
 
 
