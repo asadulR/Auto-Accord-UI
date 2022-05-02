@@ -14,7 +14,7 @@ const InventoryItems = () => {
     useEffect( () => {
         setLoading(true)
 
-        fetch('http://localhost:4000/items')
+        fetch('https://auto-accord.herokuapp.com/items')
         .then(res => res.json())
         .then(data => {
             const slicedItem = data.slice(0, 6);

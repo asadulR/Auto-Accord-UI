@@ -8,6 +8,13 @@ import Loading from '../../Shared/Loading/Loading';
 import '../FormStyle.css';
 import SocialLogin from '../SocialLogin/SocialLogin';
 
+
+
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 const Signup = () => {
     // receiving values of input fields
     const [name, setName] = useState('');
@@ -42,7 +49,7 @@ const Signup = () => {
 
     useEffect(() => {
         if (user) {
-            const url = 'http://localhost:4000/login';
+            const url = 'https://auto-accord.herokuapp.com/login';
             fetch(url, {
                 method: 'POST',
                 body: JSON.stringify({
@@ -68,7 +75,8 @@ const Signup = () => {
     };
 
     return (
-        <div className='my-5 py-5'>
+        <div className='my-5 py-5' data-aos="fade-up"
+        data-aos-duration="1500">
             {/* <Helmet><title>Signup - Money Max</title></Helmet> */}
             <div className="formbg-outer">
                 <div className="formbg p-5">

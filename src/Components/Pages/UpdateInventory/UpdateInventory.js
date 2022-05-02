@@ -19,7 +19,7 @@ const UpdateInventory = () => {
 
     useEffect(() => {
         setLoading(true);
-        const url = `http://localhost:4000/items/${inventoryId}`;
+        const url = `https://auto-accord.herokuapp.com/items/${inventoryId}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -38,7 +38,7 @@ const UpdateInventory = () => {
         setQuantity(Number(quantity) - 1)
         const newQuantity = { quantity: deliveriedquantity };
 
-        const url = `http://localhost:4000/items/${inventoryId}`;
+        const url = `https://auto-accord.herokuapp.com/items/${inventoryId}`;
 
         fetch(url, {
             method: 'PUT',
@@ -71,7 +71,7 @@ const UpdateInventory = () => {
         const updatedQuantity = { quantity: restockedQuantity };
 
 
-        const url = `http://localhost:4000/items/${inventoryId}`;
+        const url = `https://auto-accord.herokuapp.com/items/${inventoryId}`;
 
         fetch(url, {
             method: 'PUT',

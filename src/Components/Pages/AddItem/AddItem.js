@@ -26,7 +26,7 @@ const AddItem = () => {
         const item = {img, name, supplier, price, quantity, code, description, email};
 
         //  adding my item to all items collection
-        const inventoryUrl = `http://localhost:4000/items/`;
+        const inventoryUrl = `https://auto-accord.herokuapp.com/items/`;
 
         fetch (inventoryUrl, {
             method: 'POST',
@@ -44,7 +44,7 @@ const AddItem = () => {
 
 
         // Adding my item to myitem database collection
-        const myInventoryUrl = `http://localhost:4000/myitems/`;
+        const myInventoryUrl = `https://auto-accord.herokuapp.com/myitems/`;
 
         fetch (myInventoryUrl, {
             method: 'POST',
@@ -70,7 +70,7 @@ const AddItem = () => {
             <div className="container">
                 <h2 className='text-white text-center'>Add a New Inventory Item</h2>
                 <form onSubmit={handleAddItem} className="item-form-container row g-4" data-aos="fade-up"
-                    data-aos-duration="3000">
+                    data-aos-duration="2000">
                     <div className="col-md-6">
                         <input type="email" name='email' value={user?.email} readOnly className="form-control" id="inputEmail4 " />
                     </div>
@@ -81,7 +81,7 @@ const AddItem = () => {
                         <input type="text" name='name' className="form-control" required id="inputItemName" placeholder="Inventory item name *" />
                     </div>
                     <div className="col-6">
-                        <input type="text" name='code' className="form-control" required id="inputItemCode" placeholder="Insert a unique code *"/>
+                        <input type="number" name='code' className="form-control" required id="inputItemCode" placeholder="Insert a unique code *"/>
                     </div>
                     <div className="col-md-3">
                         <input type="number" required name='price' placeholder='Price *' className="form-control" id="inputPrice " />

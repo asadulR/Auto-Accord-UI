@@ -18,7 +18,7 @@ const MyItems = () => {
     const email = user?.email;
     // console.log(email);
     useEffect(() => {
-        const url = `http://localhost:4000/myitems?email=${email}`;
+        const url = `https://auto-accord.herokuapp.com/myitems?email=${email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => {

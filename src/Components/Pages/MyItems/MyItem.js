@@ -16,7 +16,7 @@ const MyItem = ({ item }) => {
         if(proceed) {     
             
             //  deleting inventory from myAddedItems collection
-            const myItemDeleteUrl = `http://localhost:4000/myitems/${code}`;
+            const myItemDeleteUrl = `https://auto-accord.herokuapp.com/myitems/${code}`;
             
             fetch(myItemDeleteUrl, {
                 method: 'DELETE',
@@ -29,7 +29,7 @@ const MyItem = ({ item }) => {
             });
 
             //  deleting inventory from allitems collection
-            const itemDeleteUrl = `http://localhost:4000/items/${code}`;
+            const itemDeleteUrl = `https://auto-accord.herokuapp.com/items/${code}`;
 
             fetch(itemDeleteUrl, {
                 method: 'DELETE',
@@ -45,7 +45,7 @@ const MyItem = ({ item }) => {
     }
     return (
         <div className="col" data-aos="fade-up"
-        data-aos-duration="3000">
+        data-aos-duration="2000">
             <div className='row row-cols-1 row-cols-md-2 g-4 align-items-center'>
                 <div className='col'><img className='img-fluid rounded' src={img} alt="" /></div>
                 <div className='col'>

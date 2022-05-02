@@ -1,0 +1,16 @@
+.blogs-container{
+    padding: 60px 0;
+    background-image: url(../../Assets/Images/blogCar.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+/* .blog-img-container{
+    background-image: url(../../Assets/Images/blogCar.jpg);
+    background-size: 100%;
+    
+} */
+.accordition-container{
+    margin: auto;
+    max-width: 800px;
+}

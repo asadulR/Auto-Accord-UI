@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import AddItem from './Components/Pages/AddItem/AddItem';
+import Blog from './Components/Pages/Blog/Blog';
 import Footer from './Components/Pages/Footer/Footer';
 import Header from './Components/Pages/Header/Header';
 import Home from './Components/Pages/Home/Home';
@@ -34,6 +35,8 @@ function App() {
             <MyItems />
           </RequireAuth>
         }></Route>
+
+        <Route path='/blog' element={<Blog/>}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<Signup />}></Route>
         <Route path='*' element={<Page404/>}></Route>

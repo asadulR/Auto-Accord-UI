@@ -15,7 +15,7 @@ const SingelInventory = ({ InventoryItem }) => {
         const proceed = window.confirm('Are you sure deleting the item?')
 
         if (proceed) {
-            const itemDeleteUrl = `http://localhost:4000/items/${code}`;
+            const itemDeleteUrl = `https://auto-accord.herokuapp.com/items/${code}`;
 
             fetch(itemDeleteUrl, {
                 method: 'DELETE',
@@ -31,7 +31,7 @@ const SingelInventory = ({ InventoryItem }) => {
 
 
             //  deleting inventory from myAddedItems collection
-            const myItemDeleteUrl = `http://localhost:4000/myitems/${code}`;
+            const myItemDeleteUrl = `https://auto-accord.herokuapp.com/myitems/${code}`;
 
             fetch(myItemDeleteUrl, {
                 method: 'DELETE',
@@ -58,7 +58,7 @@ const SingelInventory = ({ InventoryItem }) => {
             <p className='px-1 text-cente gray'>{description}</p>
 
             <div className='btns-container'>
-                <button className='stockupdate-btn ms-3'>Stock Update</button>
+                {/* <button className='stockupdate-btn ms-3'>Stock Update</button> */}
                 <button onClick={() => handleDelete(code)} className='delete-btn'>Delete Stock</button>
             </div>
             <Toaster/>

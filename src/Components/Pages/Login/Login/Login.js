@@ -7,6 +7,14 @@ import auth from '../../Shared/Auth/Firebase.init';
 import Loading from '../../Shared/Loading/Loading';
 import '../FormStyle.css';
 import SocialLogin from '../SocialLogin/SocialLogin';
+
+
+
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
+
 const Login = () => {
     const navigate = useNavigate();
     let location = useLocation();
@@ -53,7 +61,7 @@ const Login = () => {
    useEffect( () => {
     if (user) {
         //  generating a tocken for the backend 
-        const url = 'http://localhost:4000/login';
+        const url = 'https://auto-accord.herokuapp.com/login';
         fetch(url, {
             method: 'POST',
             body: JSON.stringify({
@@ -98,7 +106,8 @@ const Login = () => {
             {/* <Helmet>
                 <title>Login - Money Max</title>
             </Helmet> */}
-            <div className="formbg-outer">
+            <div className="formbg-outer" data-aos="fade-up"
+                        data-aos-duration="1500">
                 <div className="formbg p-5">
                     <div className="formbg-inner padding-horizontal--48">
                         <span className="padding-bottom--15 title-form mb-4 text-center fw-bold">Login</span>

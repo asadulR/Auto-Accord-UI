@@ -24,7 +24,7 @@ const SocialLogin = () => {
                 const user = result.user;
 
                 //  generating a tocken for the backend 
-                const url = 'http://localhost:4000/login';
+                const url = 'https://auto-accord.herokuapp.com/login';
                 fetch(url, {
                     method: 'POST',
                     body: JSON.stringify({
@@ -62,7 +62,6 @@ const SocialLogin = () => {
             <div className='w-75 mx-auto'>
                 <p className='mb-1 text-danger'>{error}</p>
                 <button onClick={googleAuth} className='w-100 btn another-signin-btn my-2 btn-white'> <img className='me-3 social-icon' src={google} alt="" />Log in with Google</button>
-                {/* <button className='w-100 btn another-signin-btn my-2 btn-white'> <img className='me-3' src={github} alt="" />Log in with Github</button> */}
             </div>
         </div>
     );

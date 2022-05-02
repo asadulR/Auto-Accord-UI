@@ -91,7 +91,7 @@
     background-color: #DB2D2E;
     color: #F1F1F1;
 } */
-.stockupdate-btn{
+/* .stockupdate-btn{
     padding: 6px 10px;
     transition: .8s ease;
     border: 1px solid green;
@@ -103,7 +103,7 @@
 .stockupdate-btn:hover{
     color: #f1f1f1;
     background-color: green;
-}
+} */
 
 .delete-btn{
     padding: 6px 10px;
@@ -122,8 +122,6 @@
     width: 90%;
     text-align: center;
     margin: auto;
-    display: flex;
-    justify-content: space-between;
     bottom: 3%;
 }
 

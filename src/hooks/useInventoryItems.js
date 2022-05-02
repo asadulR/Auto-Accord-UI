@@ -4,7 +4,7 @@ const useInventoryItems = () => {
 
     const [items, setInventoryItems] = useState([]);
     useEffect( () => {
-        fetch('http://localhost:4000/items')
+        fetch('https://auto-accord.herokuapp.com/items')
         .then(res => res.json())
         .then(data => {
             setInventoryItems(data)

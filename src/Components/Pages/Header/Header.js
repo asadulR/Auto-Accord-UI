@@ -31,7 +31,7 @@ const Header = () => {
                             </>}
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets">More deets</Nav.Link>
+                            <Nav.Link as={CustomLink} to="/blog">BLOG</Nav.Link>
                             {
                                 user ?
                                     <button onClick={logout} className='btn text-start fw-bold gray ps-0'>Logout</button>
