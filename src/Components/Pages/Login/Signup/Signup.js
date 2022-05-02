@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState, useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { Helmet } from 'react-helmet-async';
 import toast, { Toaster } from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../Shared/Auth/Firebase.init';
@@ -13,6 +12,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 AOS.init();
 
 const Signup = () => {
@@ -77,7 +77,7 @@ const Signup = () => {
     return (
         <div className='my-5 py-5' data-aos="fade-up"
         data-aos-duration="1500">
-            {/* <Helmet><title>Signup - Money Max</title></Helmet> */}
+            <PageTitle title="Signup"></PageTitle>
             <div className="formbg-outer">
                 <div className="formbg p-5">
                     <div className="formbg-inner padding-horizontal--48">

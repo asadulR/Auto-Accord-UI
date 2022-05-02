@@ -5,10 +5,12 @@ import './Blog.css';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import PageTitle from '../Shared/PageTitle/PageTitle';
 AOS.init();
 const Blog = () => {
     return (
         <div className='blogs-container'>
+            <PageTitle title="Blog"></PageTitle>
             <div className="container">
                 <div>
                     <h2 className='text-center text-primary fw-bolder fs-1 mb-4'>Blog</h2>

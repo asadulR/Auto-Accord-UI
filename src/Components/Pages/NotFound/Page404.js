@@ -3,6 +3,7 @@ import './Page404';
 import { BsArrowLeft } from "react-icons/bs";
 import img from '../../Assets/Images/404-error.png';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const Page404 = () => {
     const navigate = useNavigate();
@@ -12,6 +13,9 @@ const Page404 = () => {
     }
     return (
         <div className='my-5 py-5'>
+            <Helmet>
+                <title>404: not found</title>
+            </Helmet>
             <div className='container'>
                 <h1 className='text-danger fw-bolder'>OOOPPS...  404 ERROR</h1>
                 <div>

@@ -5,6 +5,7 @@ import './MyItems.css'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import toast, { Toaster } from 'react-hot-toast';
+import PageTitle from '../Shared/PageTitle/PageTitle';
 AOS.init();
 const MyItem = ({ item }) => {
     const { img, name, price, description, quantity, supplier, _id, code } = item;
@@ -46,6 +47,7 @@ const MyItem = ({ item }) => {
     return (
         <div className="col" data-aos="fade-up"
         data-aos-duration="2000">
+            <PageTitle title="My Item"></PageTitle>
             <div className='row row-cols-1 row-cols-md-2 g-4 align-items-center'>
                 <div className='col'><img className='img-fluid rounded' src={img} alt="" /></div>
                 <div className='col'>

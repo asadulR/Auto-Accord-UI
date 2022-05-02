@@ -7,6 +7,7 @@ import 'aos/dist/aos.css';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../Shared/Auth/Firebase.init';
 import toast, { Toaster } from 'react-hot-toast';
+import PageTitle from '../Shared/PageTitle/PageTitle';
 AOS.init();
 const AddItem = () => {
     const [user] = useAuthState(auth);
@@ -67,6 +68,7 @@ const AddItem = () => {
 
     return (
         <div className='add-item-container'>
+            <PageTitle title="Add Item"></PageTitle>
             <div className="container">
                 <h2 className='text-white text-center'>Add a New Inventory Item</h2>
                 <form onSubmit={handleAddItem} className="item-form-container row g-4" data-aos="fade-up"
@@ -81,7 +83,7 @@ const AddItem = () => {
                         <input type="text" name='name' className="form-control" required id="inputItemName" placeholder="Inventory item name *" />
                     </div>
                     <div className="col-6">
-                        <input type="number" name='code' className="form-control" required id="inputItemCode" placeholder="Insert a unique code *"/>
+                        <input type="number" name='code' className="form-control" required id="inputItemCode" placeholder="Insert a unique code for each item *"/>
                     </div>
                     <div className="col-md-3">
                         <input type="number" required name='price' placeholder='Price *' className="form-control" id="inputPrice " />

@@ -4,6 +4,7 @@ import SingelInventory from './SingelInventory';
 import './ManageInventories.css';
 import { Link } from 'react-router-dom';
 import useInventoryItems from '../../../hooks/useInventoryItems';
+import PageTitle from '../Shared/PageTitle/PageTitle';
 
 
 const ManageInventories = () => {
@@ -13,6 +14,7 @@ const ManageInventories = () => {
     
     return (
         <div className='all-inventories-container'>
+            <PageTitle title="Manage"></PageTitle>
             <div className="container">
                 <h2 className='text-center text-primary fs-1 fW-bold'>All Inventories Items</h2>
                 <div className="line-top"></div>

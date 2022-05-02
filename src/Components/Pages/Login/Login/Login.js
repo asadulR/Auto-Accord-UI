@@ -13,6 +13,7 @@ import SocialLogin from '../SocialLogin/SocialLogin';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import PageTitle from '../../Shared/PageTitle/PageTitle';
 AOS.init();
 
 const Login = () => {
@@ -103,9 +104,7 @@ const Login = () => {
     }
     return (
         <div className='my-5 py-5'>
-            {/* <Helmet>
-                <title>Login - Money Max</title>
-            </Helmet> */}
+           <PageTitle title="Login"></PageTitle>
             <div className="formbg-outer" data-aos="fade-up"
                         data-aos-duration="1500">
                 <div className="formbg p-5">

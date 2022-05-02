@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import toast, { Toaster } from 'react-hot-toast';
+import PageTitle from '../Shared/PageTitle/PageTitle';
 AOS.init();
 
 const UpdateInventory = () => {
@@ -100,6 +101,7 @@ const UpdateInventory = () => {
     };
     return (
         <div className='update-inventory'>
+            <PageTitle title="Update"></PageTitle>
             <h2 className='text-center fs-1 fw-bolder text-primary mb-5 pb-5'>Update this item</h2>
             <div className="container">
                 {

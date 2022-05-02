@@ -1,11 +1,21 @@
 import React from 'react';
 import './Footer.css';
 import { BsFacebook, BsGithub,BsLinkedin, BsInstagram, BsTwitter} from "react-icons/bs";
+import { useNavigate } from 'react-router-dom';
 const Footer = () => {
-
+    const navigate = useNavigate();
     const thisYear = () => (
         new Date().getFullYear()
     );
+
+
+    const navigateToAddCar = () => {
+        navigate('/additem');
+    }
+
+    const navigateToInventory = () => {
+        navigate('/manageinventories');
+    }
     return (
         <div className='footer-container'>
             <div className="container">
@@ -18,7 +28,7 @@ const Footer = () => {
                                 <p className='gray'>Search Our Inventory With Thousands Of Cars And More Cars Are Adding On Daily Basis</p>
                             </div>
                             <div className="col-12 text-end col-lg-4">
-                                <button className='explore-btn'>Explore</button>
+                                <button onClick={navigateToInventory} className='explore-btn'>Explore</button>
                             </div>
                         </div>
                     </div>
@@ -31,7 +41,7 @@ const Footer = () => {
                                 <p className='gray'>Login the website and Add Car To our Inventory Collection. Sell Car With Us, Stay happy with us</p>
                             </div>
                             <div className="col-12 text-end col-lg-4">
-                                <button className='explore-btn'>Add Car</button>
+                                <button onClick={navigateToAddCar} className='explore-btn'>Add Car</button>
                             </div>
                         </div>
                     </div>
