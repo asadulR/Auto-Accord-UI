@@ -21,7 +21,8 @@ const Contact = () => {
         event.target.reset();
     }
     return (
-        <div className='contact-container'>
+        <div className='contact-container' data-aos="fade-up"
+        data-aos-duration="1500">
             <PageTitle title='Contact'></PageTitle>
             <div className="container">
                 <div className="contact-info pt-5">
@@ -31,8 +32,7 @@ const Contact = () => {
                     <div className="l-bottom"></div>
 
                 </div>
-                <div className="iconic-info mb-5" data-aos="fade-up"
-                    data-aos-duration="2000">
+                <div className="iconic-info mb-5" >
                     <div className="row g-3">
                         <div className=" col-md-6 p-3 col-lg-3">
                             <div className="c-info-bg">
@@ -67,8 +67,7 @@ const Contact = () => {
                     </div>
                 </div>
                 <div className="contact-form-container">
-                    <form onSubmit={handleContactForm} className="contact-form row g-4" data-aos="fade-up"
-                        data-aos-duration="2000">
+                    <form onSubmit={handleContactForm} className="contact-form row g-4" >
                         <div className="col-md-6">
                             <input type="email" required name='email' className="form-control" id="inputEmail4 " placeholder='Email *' />
                         </div>

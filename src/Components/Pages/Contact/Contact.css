@@ -5,6 +5,7 @@
     background-size: 100%;
     background-attachment: fixed;
     padding-bottom: 50px;
+    background-repeat: no-repeat;
 }
 .contact-form{
     max-width: 800px;
@@ -24,7 +25,7 @@
     height: 2px;
     margin: auto;
     background-color: #DB2D2E;
-    margin: 0 auto 70px auto;
+    margin: 0 auto 20px auto;
 }
 
 .contact-container:hover .l-top{
