@@ -1,17 +1,22 @@
 import React from 'react';
 import './AddItem.css';
 
-
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../Shared/Auth/Firebase.init';
 import toast, { Toaster } from 'react-hot-toast';
 import PageTitle from '../Shared/PageTitle/PageTitle';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 AOS.init();
 const AddItem = () => {
     const [user] = useAuthState(auth);
     // console.log(user)
+
+    const uid = function(){
+        return Date.now().toString(36)+ Math.random().toString(36).substr(2);
+        //  
+    }
 
     const handleAddItem = event => {
         event.preventDefault();
@@ -20,7 +25,8 @@ const AddItem = () => {
         const supplier = event.target.supplier.value;
         const price = event.target.price.value;
         const quantity = event.target.quantity.value;
-        const code = event.target.code.value;
+        const providedCode = event.target.code.value;
+        const code = providedCode + uid();
         const description = event.target.description.value;
         const email = user?.email;
 
@@ -29,6 +35,7 @@ const AddItem = () => {
         //  adding my item to all items collection
         const inventoryUrl = `https://auto-accord.herokuapp.com/items/`;
 
+        
         fetch (inventoryUrl, {
             method: 'POST',
             headers: {
@@ -61,9 +68,10 @@ const AddItem = () => {
             // console.log(result);
         })
 
-
         event.target.reset();
     };
+
+
 
 
     return (
@@ -79,10 +87,10 @@ const AddItem = () => {
                     <div className="col-md-6">
                         <input type="text" required name='supplier' placeholder='Your name *' className="form-control" id="inputname " />
                     </div>
-                    <div className="col-6">
+                    <div className="col-md-6">
                         <input type="text" name='name' className="form-control" required id="inputItemName" placeholder="Inventory item name *" />
                     </div>
-                    <div className="col-6">
+                    <div className="col-md-6">
                         <input type="number" name='code' className="form-control" required id="inputItemCode" placeholder="Insert a unique code for each item *"/>
                     </div>
                     <div className="col-md-3">

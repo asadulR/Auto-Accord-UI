@@ -1,0 +1,53 @@
+
+.contact-container{
+    background-image: url('../../Assets/Images/blogCar.jpg');
+    background-position: center;
+    background-size: 100%;
+    background-attachment: fixed;
+    padding-bottom: 50px;
+}
+.contact-form{
+    max-width: 800px;
+    margin: auto;
+}
+
+.l-top{
+    width: 120px;
+    transition: 2s;
+    height: 2px;
+    margin: 0 auto 8px auto;
+    background-color: #DB2D2E;
+}
+.l-bottom{
+    transition: 2s;
+    width: 50px;
+    height: 2px;
+    margin: auto;
+    background-color: #DB2D2E;
+    margin: 0 auto 70px auto;
+}
+
+.contact-container:hover .l-top{
+    width: 60px;
+}
+.contact-container:hover .l-bottom{
+    width: 140px;
+}
+.c-info-bg{
+    background-color: #e4e0e0;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 8px;
+}
+.gray{
+    color: gray;
+}
+.c-info-bg:hover h4 {
+    color: #DB2D2E;
+}
+
+.contact-icon{
+    color: #DB2D2E;
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
