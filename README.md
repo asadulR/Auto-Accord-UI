@@ -14,7 +14,7 @@
 
 ## Available package
 
-- React Touter
+- React Router
 - AOS Animation
 - React Bootstrap
 - Firebase , React firebase hook
